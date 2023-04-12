@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Colored button</title>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      #myButton {
+        display: block;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="myButton">Press</button>
+    <script>
+      let button = document.getElementById("myButton");
+
+      button.style.backgroundColor = "red";
+      button.style.color = "white";
+      button.style.fontWeight = "bold";
+      button.style.fontSize = "16px";
+      button.style.border = "none";
+      button.style.padding = "10px 20px";
+      button.style.cursor = "pointer";
+
+      let count = 0;
+
+      function changeColor() {
+        count++;
+        if (count === 1) {
+          button.style.backgroundColor = "yellow";
+        } else if (count === 2) {
+          button.style.backgroundColor = "green";
+        } else {
+          button.style.backgroundColor = "red";
+          count = 0;
+        }
+      }
+
+      button.addEventListener("click", changeColor);
+    </script>
+  </body>
+</html>
